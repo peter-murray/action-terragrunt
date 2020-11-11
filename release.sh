@@ -32,16 +32,16 @@ git pull origin --tags
 
 npm ci
 
-mkdir ./lib
+#mkdir ./lib
 npm run build
 git add ./lib/index.js
 git commit -m "chore(release): Add build assets"
 
 npm run release -- --release-as "${RELEASE_TYPE}" --preset eslint
 
-git rm ./lib/index.js
-rm -rf ./lib
-git commit -m "chore(release): Remove build assets [skip ci]"
+#git rm ./lib/index.js
+#rm -rf ./lib
+#git commit -m "chore(release): Remove build assets [skip ci]"
 
 TAG_NAME="v$(jq -r '.version' ./package.json)"
 git push origin master
