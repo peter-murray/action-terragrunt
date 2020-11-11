@@ -1,6 +1,4 @@
 [![license](https://img.shields.io/github/license/peter-murray/terragrunt-github-action)](https://github.com/peter-murray/terragrunt-github-action/blob/master/LICENSE)
-[![release](https://img.shields.io/github/release/peter-murray/terragrunt-github-action.svg)](https://github.com/peter-murray/terragrunt-github-action/releases/latest)
-[![GitHub release date](https://img.shields.io/github/release-date/peter-murray/terragrunt-github-action.svg)](https://github.com/peter-murray/terragrunt-github-action/releases)
 
 
 # Setup Terragrunt GitHub Action
