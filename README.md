@@ -1,12 +1,15 @@
-[![license](https://img.shields.io/github/license/autero1/action-terragrunt)](https://github.com/autero1/action-terragrunt/blob/master/LICENSE)
-[![release](https://img.shields.io/github/release/autero1/action-terragrunt.svg)](https://github.com/autero1/action-terragrunt/releases/latest)
-[![GitHub release date](https://img.shields.io/github/release-date/autero1/action-terragrunt.svg)](https://github.com/autero1/action-terragrunt/releases)
-![Test Action](https://github.com/autero1/action-terragrunt/workflows/Test%20Action/badge.svg?branch=master&event=push)
-[![CodeFactor](https://www.codefactor.io/repository/github/autero1/action-terragrunt/badge)](https://www.codefactor.io/repository/github/autero1/action-terragrunt)
+[![license](https://img.shields.io/github/license/peter-murray/terragrunt-github-action)](https://github.com/peter-murray/terragrunt-github-action/blob/master/LICENSE)
+[![release](https://img.shields.io/github/release/peter-murray/terragrunt-github-action.svg)](https://github.com/peter-murray/terragrunt-github-action/releases/latest)
+[![GitHub release date](https://img.shields.io/github/release-date/peter-murray/terragrunt-github-action.svg)](https://github.com/peter-murray/terragrunt-github-action/releases)
+
 
 # Setup Terragrunt GitHub Action
 
 Set up your GitHub Actions workflow with a specific version of [Terragrunt](https://terragrunt.gruntwork.io/).
+
+This action is a hard fork of https://github.com/autero1/action-terragrunt which was required as the maintainer was not responding to the necessary updates to resolve
+[CVE-2020-15228](https://github.com/advisories/GHSA-mfwh-5m23-j46w) which would result in this action no longer functioning after [November 16 2020](https://github.blog/changelog/2020-11-09-github-actions-removing-set-env-and-add-path-commands-on-november-16/).
+
 
 ## Usage
 
@@ -24,10 +27,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Setup Terragrunt
-        uses: autero1/action-terragrunt@v0.1.0
+        uses: peter-murray/terragrunt-github-action@v1.0.0
         with:
           terragrunt_version: 0.21.13
+
       - name: Interact with Terragrunt
         run: terragrunt --version
 ```
@@ -52,22 +57,6 @@ This action has been tested on the following platforms:
 * windows-latest
 * macos-latest
 
-
-## Contributing
-
-Contributions to this repository are very welcome! We follow a fairly standard [pull request process](
-https://help.github.com/articles/about-pull-requests/) for contributions, subject to the following guidelines:
-
-1. File a GitHub issue
-1. Fork the repository
-1. Update the documentation
-1. Update the tests
-1. Update the code
-1. Create a pull request
-1. (Merge and release)
-
-The maintainers for this repo will review your code and provide feedback. If everything looks good, they will merge the
-code and release a new version, which you'll be able to find in the [releases page](../../releases).
 
 ## License
 
